@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    //Background: #f0f0f0
+    //Pink button: #575757
+
+    <color name="colorPrimary">#DABDB8</color>
+    <color name="colorPrimaryDark">#C59499</color>
+    <color name="colorPrimaryMedium">#D5AFAB</color>
+    <color name="colorPrimaryButton">#F2C4BF</color>
+    <color name="colorAccent">#AAAAAA</color>
+</resources>
+
+

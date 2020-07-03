@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.HomeActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/homeElement"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/welcomeTitle"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="welcome, ..."
+            android:textSize="30dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/welcomeMessage"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Believe you can and you're halfway there \n-Theodore Roosevelt"
+            android:textColor="@color/colorAccent"
+            android:textSize="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/welcomeTitle" />
+
+        <TextView
+            android:id="@+id/learnTitle"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="bottom"
+            android:text="Learn"
+            android:textSize="25dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/welcomeMessage" />
+
+        <TextView
+            android:id="@+id/learnMessage"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:text="New learnings every week"
+            android:textColor="@color/colorAccent"
+            android:textSize="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/learnTitle" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_learn"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/learnMessage" />
+
+        <TextView
+            android:id="@+id/soothingToolsTItle"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="bottom"
+            android:text="Soothing Tools"
+            android:textSize="25dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rv_learn" />
+
+        <TextView
+            android:id="@+id/soothingToolsMessage"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:text="Exercises to help you feel relaxed and calm"
+            android:textColor="@color/colorAccent"
+            android:textSize="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/soothingToolsTItle" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_soothingTools"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/soothingToolsMessage" />
+
+        <TextView
+            android:id="@+id/toolboxTitle"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="bottom"
+            android:text="Toolbox"
+            android:textSize="25dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rv_soothingTools" />
+
+        <TextView
+            android:id="@+id/toolboxMessage"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:text="Phone counselling and support"
+            android:textColor="@color/colorAccent"
+            android:textSize="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolboxTitle" />
+
+        <LinearLayout
+            android:id="@+id/toolboxButtonLayer"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="3"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolboxMessage">
+
+            <Button
+                android:id="@+id/helplineButton"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:background="@color/colorPrimaryMedium"
+                android:text="HELPLINE"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:layout_weight="1"/>
+
+            <Button
+                android:id="@+id/covidButton"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
+                android:background="@color/colorPrimaryMedium"
+                android:text="COVID-19"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:layout_weight="1"/>
+
+            <Button
+                android:id="@+id/settingsButton"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:background="@color/colorPrimaryMedium"
+                android:text="SETTINGS"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

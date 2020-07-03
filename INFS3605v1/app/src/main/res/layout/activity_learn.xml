@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.LearnActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/learnHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:paddingBottom="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/learnTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:text="Learn"
+            android:textColor="#FFFFFF"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/learnMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:text="Exercised based, practical advice and guidance on common mental health issues brought to you by our team of psychologists."
+            android:textColor="#FFFFFF"
+            android:textSize="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/learnTitle" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/learnElementTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="25dp"
+        android:text="Learn Element"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/learnHeader" />
+
+
+    <LinearLayout
+        android:id="@+id/learnButtonLayer1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/learnElementTitle">
+
+        <Button
+            android:id="@+id/learnButton1"
+            android:layout_width="0dp"
+            android:layout_height="175dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="12.5dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimaryButton" />
+
+        <Button
+            android:id="@+id/learnButton2"
+            android:layout_width="0dp"
+            android:layout_height="175dp"
+            android:layout_marginStart="12.5dp"
+            android:layout_marginEnd="50dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimaryButton" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/learnButtonMessageLayer1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/learnButtonLayer1">
+
+        <TextView
+            android:id="@+id/learnButtonMessage1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="12.5dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="What is ...?"
+            android:textSize="12.5dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/learnButtonMessage2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12.5dp"
+            android:layout_marginEnd="50dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Signs and Symptoms"
+            android:textSize="12.5dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/learnButtonLayer2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/learnButtonMessageLayer1">
+
+        <Button
+            android:id="@+id/learnButton3"
+            android:layout_width="0dp"
+            android:layout_height="175dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="12.5dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimaryButton" />
+
+        <Button
+            android:id="@+id/learnButton4"
+            android:layout_width="0dp"
+            android:layout_height="175dp"
+            android:layout_marginStart="12.5dp"
+            android:layout_marginEnd="50dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimaryButton" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/learnButtonMessageLayer2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/learnButtonLayer2">
+
+        <TextView
+            android:id="@+id/learnButtonMessage3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="12.5dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Manage ..."
+            android:textSize="12.5dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/learnButtonMessage4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12.5dp"
+            android:layout_marginEnd="50dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Stories"
+            android:textSize="12.5dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
