@@ -12,9 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
-        android:paddingBottom="25dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <TextView
             android:id="@+id/helplineTitle"
@@ -25,31 +24,39 @@
             android:textColor="#FFFFFF"
             android:textSize="30dp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/helplineMessage"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_margin="25dp"
             android:text="Help is a button away."
             android:textColor="#FFFFFF"
             android:textSize="15dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/helplineTitle" />
+            app:layout_constraintTop_toBottomOf="@id/helplineTitle"
+            app:layout_constraintStart_toStartOf="@id/helplineTitle"
+            app:layout_constraintEnd_toStartOf="@id/helplineHeaderImage" />
+
+
+        <ImageView
+            android:id="@+id/helplineHeaderImage"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:src="@drawable/helpline_header"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_helpline"
+        android:id="@+id/helplineRv"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="25dp"
         android:layout_marginBottom="25dp"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/helplineHeader"
-        app:layout_constraintBottom_toBottomOf="parent"/>
-
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,32 +12,40 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
-        android:paddingBottom="25dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <TextView
             android:id="@+id/learnTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="25dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="25dp"
             android:text="Learn"
             android:textColor="#FFFFFF"
             android:textSize="30dp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/learnMessage"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_margin="25dp"
             android:text="Exercised based, practical advice and guidance on common mental health issues brought to you by our team of psychologists."
             android:textColor="#FFFFFF"
             android:textSize="15dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/learnTitle" />
+            app:layout_constraintTop_toBottomOf="@id/learnTitle"
+            app:layout_constraintEnd_toStartOf="@id/learnHeaderImage"
+            app:layout_constraintStart_toStartOf="@id/learnTitle" />
+
+        <ImageView
+            android:id="@+id/learnHeaderImage"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:src="@drawable/learn_header"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -48,9 +57,9 @@
         android:text="Learn Element"
         android:textSize="30dp"
         android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/learnHeader"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/learnHeader" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 
     <LinearLayout
@@ -60,26 +69,48 @@
         android:layout_marginTop="25dp"
         android:orientation="horizontal"
         android:weightSum="2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/learnElementTitle">
+        app:layout_constraintTop_toBottomOf="@id/learnElementTitle"
+        app:layout_constraintStart_toStartOf="parent">
 
-        <Button
-            android:id="@+id/learnButton1"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/learnPanel1"
             android:layout_width="0dp"
             android:layout_height="175dp"
             android:layout_marginStart="50dp"
             android:layout_marginEnd="12.5dp"
             android:layout_weight="1"
-            android:background="@color/colorPrimaryButton" />
+            android:background="@color/colorPrimaryButton">
 
-        <Button
-            android:id="@+id/learnButton2"
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:src="@drawable/learn_what_is"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/learnPanel2"
             android:layout_width="0dp"
             android:layout_height="175dp"
             android:layout_marginStart="12.5dp"
             android:layout_marginEnd="50dp"
             android:layout_weight="1"
-            android:background="@color/colorPrimaryButton" />
+            android:background="@color/colorPrimaryButton">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:src="@drawable/learn_signs_and_symptoms"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
     </LinearLayout>
 
     <LinearLayout
@@ -88,8 +119,8 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:weightSum="2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/learnButtonLayer1">
+        app:layout_constraintTop_toBottomOf="@id/learnButtonLayer1"
+        app:layout_constraintStart_toStartOf="parent">
 
         <TextView
             android:id="@+id/learnButtonMessage1"
@@ -124,26 +155,47 @@
         android:layout_marginTop="25dp"
         android:orientation="horizontal"
         android:weightSum="2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/learnButtonMessageLayer1">
+        app:layout_constraintTop_toBottomOf="@id/learnButtonMessageLayer1"
+        app:layout_constraintStart_toStartOf="parent">
 
-        <Button
-            android:id="@+id/learnButton3"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/learnPanel3"
             android:layout_width="0dp"
             android:layout_height="175dp"
             android:layout_marginStart="50dp"
             android:layout_marginEnd="12.5dp"
             android:layout_weight="1"
-            android:background="@color/colorPrimaryButton" />
+            android:background="@color/colorPrimaryButton">
 
-        <Button
-            android:id="@+id/learnButton4"
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:src="@drawable/learn_manage"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/learnPanel4"
             android:layout_width="0dp"
             android:layout_height="175dp"
             android:layout_marginStart="12.5dp"
             android:layout_marginEnd="50dp"
             android:layout_weight="1"
-            android:background="@color/colorPrimaryButton" />
+            android:background="@color/colorPrimaryButton">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:src="@drawable/learn_stories"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
 
     <LinearLayout
@@ -152,8 +204,8 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:weightSum="2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/learnButtonLayer2">
+        app:layout_constraintTop_toBottomOf="@id/learnButtonLayer2"
+        app:layout_constraintStart_toStartOf="parent">
 
         <TextView
             android:id="@+id/learnButtonMessage3"
@@ -178,7 +230,6 @@
             android:text="Stories"
             android:textSize="12.5dp"
             android:textStyle="bold" />
-
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

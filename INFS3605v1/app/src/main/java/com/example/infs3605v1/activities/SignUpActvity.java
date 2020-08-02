@@ -1,13 +1,7 @@
 package com.example.infs3605v1.activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
-
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.PorterDuff;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -17,22 +11,28 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+
 import com.example.infs3605v1.R;
 import com.example.infs3605v1.database.AppDatabase;
 import com.example.infs3605v1.database.User;
+import com.example.infs3605v1.methods.Methods;
 
 public class SignUpActvity extends AppCompatActivity {
 
     ConstraintLayout signUpElement;
-    EditText usernameSignUp;
-    EditText passwordSignUp;
-    CheckBox tosSignUp;
+    EditText signUpUsername;
+    EditText signUpPassword;
+    CheckBox signUpTOS;
     Button signUpButton;
-    TextView returnSignIn;
+    TextView signUpReturnSignIn;
+
     Toast toast;
     Intent intent;
     AppDatabase db;
     User user;
+    Methods methods;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,24 +40,23 @@ public class SignUpActvity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
 
         signUpElement = findViewById(R.id.signUpElement);
-        usernameSignUp = signUpElement.findViewById(R.id.usernameSignUp);
-        passwordSignUp = signUpElement.findViewById(R.id.passwordSignUp);
-        tosSignUp = signUpElement.findViewById(R.id.tosSignUp);
+        signUpUsername = signUpElement.findViewById(R.id.signUpUsername);
+        signUpPassword = signUpElement.findViewById(R.id.signUpPassword);
+        signUpTOS = signUpElement.findViewById(R.id.signUpTOS);
         signUpButton = signUpElement.findViewById(R.id.signUpButton);
-        returnSignIn = signUpElement.findViewById(R.id.returnSignIn);
-        db = AppDatabase.getInstance(getApplicationContext());
+        signUpReturnSignIn = signUpElement.findViewById(R.id.signUpReturnSignIn);
 
-        System.out.println("Database has " + db.userDao().getAll().size() + " users");
+        db = AppDatabase.getInstance(getApplicationContext());
+        methods = new Methods(this);
 
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //account creation authenticator
                 accountCreationAuthenticator();
             }
         });
 
-        passwordSignUp.setOnKeyListener(new View.OnKeyListener() {
+        signUpPassword.setOnKeyListener(new View.OnKeyListener() {
             public boolean onKey(View v, int keyCode, KeyEvent event) {
                 if ((event.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
                     InputMethodManager inputMethodManager = (InputMethodManager) v.getContext().getSystemService(getApplicationContext().INPUT_METHOD_SERVICE);
@@ -68,7 +67,7 @@ public class SignUpActvity extends AppCompatActivity {
             }
         });
 
-        returnSignIn.setOnClickListener(new View.OnClickListener() {
+        signUpReturnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 intent = new Intent(getApplicationContext(), LoginActivity.class);
@@ -79,25 +78,28 @@ public class SignUpActvity extends AppCompatActivity {
     }
 
     private void accountCreationAuthenticator(){
-        if (usernameSignUp.length() < 5) {
-            toast = Toast.makeText(getApplicationContext(), "Username must be longer than 5 characters.", Toast.LENGTH_LONG);
-            toastConfiguration(toast);
+        if (signUpUsername.length() < 5) {
+            toast = Toast.makeText(getApplicationContext(), "Username must be 5 characters or longer.", Toast.LENGTH_LONG);
+            methods.toastConfiguration(toast);
             toast.show();
-        } else if (db.userDao().findUserByUsername(usernameSignUp.getText().toString().toLowerCase()) != null) {
+        } else if (signUpUsername.length() > 19) {
+            toast = Toast.makeText(getApplicationContext(), "Username must be 20 characters or shorter.", Toast.LENGTH_LONG);
+            methods.toastConfiguration(toast);
+            toast.show();
+        } else if (db.userDao().findUserByUsername(signUpUsername.getText().toString().toLowerCase()) != null) {
             toast = Toast.makeText(getApplicationContext(), "Username already exists.", Toast.LENGTH_LONG);
-            toastConfiguration(toast);
+            methods.toastConfiguration(toast);
             toast.show();
-        } else if (passwordSignUp.length() < 8) {
+        } else if (signUpPassword.length() < 8) {
             toast = Toast.makeText(getApplicationContext(), "Password must be longer than 8 characters", Toast.LENGTH_LONG);
-            toastConfiguration(toast);
+            methods.toastConfiguration(toast);
             toast.show();
-        } else if (!(tosSignUp.isChecked())) {
+        } else if (!(signUpTOS.isChecked())) {
             toast = Toast.makeText(getApplicationContext(), "To make an account, you must agree to the ToS and Privacy Policy.", Toast.LENGTH_LONG);
-            toastConfiguration(toast);
+            methods.toastConfiguration(toast);
             toast.show();
         } else {
-            //enter account into account database
-            user = new User(usernameSignUp.getText().toString().toLowerCase(), passwordSignUp.getText().toString().toLowerCase());
+            user = new User(signUpUsername.getText().toString().toLowerCase(), signUpPassword.getText().toString().toLowerCase());
             db.userDao().insert(user);
             intent = new Intent(getApplicationContext(), LoginActivity.class);
             finish();
@@ -105,15 +107,4 @@ public class SignUpActvity extends AppCompatActivity {
         }
     }
 
-    private Toast toastConfiguration(Toast toast) {
-        View view = toast.getView();
-        view.getBackground().setColorFilter(getResources().getColor(R.color.colorPrimary), PorterDuff.Mode.SRC_IN);
-
-        TextView textView = (TextView) view.findViewById(android.R.id.message);
-        textView.setTextColor(Color.WHITE);
-        textView.setGravity(Gravity.CENTER);
-        textView.setTextSize(15);
-
-        return toast;
-    }
 }

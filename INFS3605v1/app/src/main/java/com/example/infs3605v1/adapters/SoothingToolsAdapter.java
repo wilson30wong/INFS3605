@@ -8,11 +8,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.infs3605v1.R;
-import com.example.infs3605v1.activities.LearnActivity;
 import com.example.infs3605v1.activities.SoothingToolsActivity;
 
 import java.util.ArrayList;
@@ -38,7 +36,6 @@ public class SoothingToolsAdapter extends RecyclerView.Adapter<SoothingToolsAdap
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, SoothingToolsActivity.class);
-                System.out.println(soothingToolsElement);
                 intent.putExtra("soothingToolsElement",soothingToolsElement);
                 context.startActivity(intent);
             }

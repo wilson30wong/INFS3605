@@ -17,15 +17,14 @@ public interface UserDao {
     @Query("SELECT * FROM user WHERE username = :username")
     User findUserByUsername(String username);
 
-    @Query("DELETE FROM user")
-    public void deleteAll();
-
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insert(User user);
 
     @Delete
     void delete(User user);
 
+    @Query("DELETE FROM user")
+    public void deleteAll();
 
 
 }

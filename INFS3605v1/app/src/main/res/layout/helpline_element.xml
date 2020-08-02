@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="150dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="150dp">
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/helplineElement"
@@ -15,47 +17,55 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <TextView
-            android:id="@+id/helplineLink"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Helpline Link"
-            android:textSize="10dp"
-            android:textStyle="bold"
-            android:layout_marginStart="25dp"
-            android:layout_marginEnd="25dp"
-            app:layout_constraintBottom_toTopOf="@id/helplinePhone"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/helplinePhone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Helpline Phone"
-            android:textSize="10dp"
-            android:layout_marginStart="25dp"
-            android:layout_marginEnd="25dp"
+        <ImageView
+            android:id="@+id/helplineImage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="25dp"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="parent" />
 
-        <TextView
-            android:id="@+id/helplineDesc"
-            android:layout_width="match_parent"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Helpline Description"
-            android:textSize="10dp"
-            android:textStyle="bold"
             android:layout_marginStart="25dp"
             android:layout_marginEnd="25dp"
-            app:layout_constraintTop_toBottomOf="@id/helplinePhone"
+            app:layout_constraintStart_toEndOf="@id/helplineImage"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <TextView
+                android:id="@+id/helplineLink"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Helpline Link"
+                android:textSize="10dp"
+                android:textColor="#0000EE"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/helplinePhone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Helpline Phone"
+                android:textSize="10dp"
+                app:layout_constraintTop_toBottomOf="@id/helplineLink"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/helplineDesc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Helpline Description"
+                android:textSize="10dp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/helplinePhone"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -27,7 +27,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/usernameTitleSignUp"
+            android:id="@+id/signUpUsernameTitle"
             android:layout_width="match_parent"
             android:layout_height="25dp"
             android:text="Username"
@@ -38,7 +38,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
-            android:id="@+id/usernameSignUp"
+            android:id="@+id/signUpUsername"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:ems="10"
@@ -49,23 +49,23 @@
             android:textSize="20dp"
             android:textStyle="bold"
             android:backgroundTint="@color/colorAccent"
-            app:layout_constraintTop_toBottomOf="@id/usernameTitleSignUp"
+            app:layout_constraintTop_toBottomOf="@id/signUpUsernameTitle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
-            android:id="@+id/passwordTitleSignUp"
+            android:id="@+id/signUpPasswordTitle"
             android:layout_width="match_parent"
             android:layout_height="25dp"
             android:text="Password"
             android:textSize="15dp"
             android:layout_marginTop="25dp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/usernameSignUp"
+            app:layout_constraintTop_toBottomOf="@id/signUpUsername"
             app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
-            android:id="@+id/passwordSignUp"
+            android:id="@+id/signUpPassword"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:ems="10"
@@ -75,18 +75,18 @@
             android:maxLines="1"
             android:textSize="20dp"
             android:backgroundTint="@color/colorAccent"
-            app:layout_constraintTop_toBottomOf="@id/passwordTitleSignUp"
+            app:layout_constraintTop_toBottomOf="@id/signUpPasswordTitle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
         <CheckBox
-            android:id="@+id/tosSignUp"
+            android:id="@+id/signUpTOS"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="I agree to the Terms of Service and Privacy Policy."
             android:layout_marginTop="25dp"
             android:buttonTint="@color/colorPrimary"
-            app:layout_constraintTop_toBottomOf="@id/passwordSignUp"
+            app:layout_constraintTop_toBottomOf="@id/signUpPassword"
             app:layout_constraintStart_toStartOf="parent"/>
 
         <Button
@@ -98,12 +98,12 @@
             android:textColor="#FFFFFF"
             android:textStyle="bold"
             android:layout_marginTop="25dp"
-            app:layout_constraintTop_toBottomOf="@id/tosSignUp"
+            app:layout_constraintTop_toBottomOf="@id/signUpTOS"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
-            android:id="@+id/returnSignIn"
+            android:id="@+id/signUpReturnSignIn"
             android:layout_width="match_parent"
             android:layout_height="25dp"
             android:text="Already have an account? Sign In!"

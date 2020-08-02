@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,8 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimaryDark"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <TextView
             android:id="@+id/learnDetailTitle"
@@ -23,11 +24,10 @@
             android:textColor="#FFFFFF"
             android:textSize="30dp"
             android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -35,9 +35,9 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/learnDetailHeader"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -53,17 +53,7 @@
                 android:textSize="15dp" />
 
         </LinearLayout>
-    </ScrollView>
 
-<!--        <TextView-->
-<!--            android:id="@+id/learnDetailBody"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_margin="25dp"-->
-<!--            android:text="Anxiety is more than just feeling stressed or worried. While stress and anxious feelings are a common response to a situation where we feel under pressure, they usually pass once the stressful situation has passed, or ‘stressor’ is removed. \n\nEveryone feels anxious from time to time. When anxious feelings don't go away, happen without any particular reason or make it hard to cope with daily life it may be the sign of an anxiety condition. \n\nAnxiety is the most common mental health condition in Australia. On average, one in four people – one in three women and one in five men – will experience anxiety at some stage in their life. In a 12-month period, over two million Australians experience anxiety. \n\nThere are many ways to help manage anxiety and the sooner people with anxiety get support, the more likely they are to recover."-->
-<!--            android:textSize="15dp"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@id/learnDetailHeader" />-->
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

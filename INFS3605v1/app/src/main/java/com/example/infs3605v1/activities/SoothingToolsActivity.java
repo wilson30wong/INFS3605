@@ -1,14 +1,15 @@
 package com.example.infs3605v1.activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+
 import com.example.infs3605v1.R;
 import com.example.infs3605v1.fragments.ExercisesFragment;
+import com.example.infs3605v1.fragments.ForumFragment;
+import com.example.infs3605v1.fragments.MeditateFragment;
 import com.example.infs3605v1.fragments.MoodTrackerFragment;
 
 public class SoothingToolsActivity extends AppCompatActivity {
@@ -17,6 +18,7 @@ public class SoothingToolsActivity extends AppCompatActivity {
     Intent intent;
     String soothingToolsElement;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,15 +26,16 @@ public class SoothingToolsActivity extends AppCompatActivity {
 
         intent = getIntent();
         soothingToolsElement = intent.getStringExtra("soothingToolsElement");
-        System.out.println(soothingToolsElement);
-
         fragmentManager = getSupportFragmentManager();
 
         if(soothingToolsElement.equals("EXERCISES")){
             fragmentManager.beginTransaction().replace(R.id.fragmentSoothingTools, new ExercisesFragment()).commit();
         } else if (soothingToolsElement.equals("MOOD TRACKER")){
             fragmentManager.beginTransaction().replace(R.id.fragmentSoothingTools, new MoodTrackerFragment()).commit();
-
+        } else if (soothingToolsElement.equals("FORUM")) {
+            fragmentManager.beginTransaction().replace(R.id.fragmentSoothingTools, new ForumFragment()).commit();
+        } else if (soothingToolsElement.equals("MEDITATE")) {
+            fragmentManager.beginTransaction().replace(R.id.fragmentSoothingTools, new MeditateFragment()).commit();
         }
 
 

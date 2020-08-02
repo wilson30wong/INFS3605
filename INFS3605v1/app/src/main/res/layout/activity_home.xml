@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,116 +12,117 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="25dp"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintStart_toStartOf="parent">
 
         <TextView
-            android:id="@+id/welcomeTitle"
+            android:id="@+id/homeWelcomeTitle"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:text="welcome, ..."
             android:textSize="30dp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:autoSizeTextType="uniform"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/welcomeMessage"
+            android:id="@+id/homeWelcomeMessage"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:text="Believe you can and you're halfway there \n-Theodore Roosevelt"
             android:textColor="@color/colorAccent"
             android:textSize="15dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/welcomeTitle" />
+            app:layout_constraintTop_toBottomOf="@id/homeWelcomeTitle"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/learnTitle"
+            android:id="@+id/homeLearnTitle"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:gravity="bottom"
             android:text="Learn"
             android:textSize="25dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/welcomeMessage" />
+            app:layout_constraintTop_toBottomOf="@id/homeWelcomeMessage"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/learnMessage"
+            android:id="@+id/homeLearnMessage"
             android:layout_width="match_parent"
             android:layout_height="25dp"
             android:text="New learnings every week"
             android:textColor="@color/colorAccent"
             android:textSize="15dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/learnTitle" />
+            app:layout_constraintTop_toBottomOf="@id/homeLearnTitle"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_learn"
+            android:id="@+id/homeRvLearn"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/learnMessage" />
+            app:layout_constraintTop_toBottomOf="@id/homeLearnMessage"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/soothingToolsTItle"
+            android:id="@+id/homeSoothingToolsTItle"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:gravity="bottom"
             android:text="Soothing Tools"
             android:textSize="25dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/rv_learn" />
+            app:layout_constraintTop_toBottomOf="@id/homeRvLearn"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/soothingToolsMessage"
+            android:id="@+id/homeSoothingToolsMessage"
             android:layout_width="match_parent"
             android:layout_height="25dp"
             android:text="Exercises to help you feel relaxed and calm"
             android:textColor="@color/colorAccent"
             android:textSize="15dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/soothingToolsTItle" />
+            app:layout_constraintTop_toBottomOf="@id/homeSoothingToolsTItle"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_soothingTools"
+            android:id="@+id/homeRvSoothingTools"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/soothingToolsMessage" />
+            app:layout_constraintTop_toBottomOf="@id/homeSoothingToolsMessage"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/toolboxTitle"
+            android:id="@+id/homeToolboxTitle"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:gravity="bottom"
             android:text="Toolbox"
             android:textSize="25dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/rv_soothingTools" />
+            app:layout_constraintTop_toBottomOf="@id/homeRvSoothingTools"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/toolboxMessage"
+            android:id="@+id/homeToolboxMessage"
             android:layout_width="match_parent"
             android:layout_height="25dp"
             android:text="Phone counselling and support"
             android:textColor="@color/colorAccent"
             android:textSize="15dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/toolboxTitle" />
+            app:layout_constraintTop_toBottomOf="@id/homeToolboxTitle"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <LinearLayout
-            android:id="@+id/toolboxButtonLayer"
+            android:id="@+id/homeToolboxButtonLayer"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:weightSum="3"
             android:orientation="horizontal"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/toolboxMessage">
+            app:layout_constraintTop_toBottomOf="@id/homeToolboxMessage"
+            app:layout_constraintStart_toStartOf="parent">
 
             <Button
-                android:id="@+id/helplineButton"
+                android:id="@+id/homeHelplineButton"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:background="@color/colorPrimaryMedium"
@@ -130,7 +132,7 @@
                 android:layout_weight="1"/>
 
             <Button
-                android:id="@+id/covidButton"
+                android:id="@+id/homeCovidButton"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_marginStart="25dp"
@@ -142,7 +144,7 @@
                 android:layout_weight="1"/>
 
             <Button
-                android:id="@+id/settingsButton"
+                android:id="@+id/homeSettingsButton"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:background="@color/colorPrimaryMedium"

@@ -1,7 +1,6 @@
 package com.example.infs3605v1.adapters;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,15 +10,14 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.infs3605v1.R;
-import com.example.infs3605v1.activities.LearnActivity;
-import com.example.infs3605v1.model.Exercises;
+import com.example.infs3605v1.database.Exercise;
 
 import java.util.ArrayList;
 
 public class ExercisesAdapter extends RecyclerView.Adapter<ExercisesAdapter.ExercisesElementViewHolder> {
 
     Context context;
-    private ArrayList<Exercises> exercisesElementArrayList;
+    private ArrayList<Exercise> exerciseElementArrayList;
 
     public ExercisesElementViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.exercises_element, parent,
@@ -29,19 +27,18 @@ public class ExercisesAdapter extends RecyclerView.Adapter<ExercisesAdapter.Exer
     }
 
     public void onBindViewHolder(@NonNull ExercisesElementViewHolder holder, int position) {
-        final Exercises exercisesElement = exercisesElementArrayList.get(position);
+        final Exercise exerciseElement = exerciseElementArrayList.get(position);
         context = holder.view.getContext();
-        holder.exercisesElementTitle.setText(exercisesElement.getTitle());
-        holder.exercisesElementBody.setText(exercisesElement.getBody());
-
+        holder.exercisesElementTitle.setText(exerciseElement.getTitle());
+        holder.exercisesElementBody.setText(exerciseElement.getBody());
     }
 
     public int getItemCount() {
-        return exercisesElementArrayList.size();
+        return exerciseElementArrayList.size();
     }
 
-    public void setData(ArrayList<Exercises> data) {
-        this.exercisesElementArrayList = data;
+    public void setData(ArrayList<Exercise> data) {
+        this.exerciseElementArrayList = data;
     }
 
     public static class ExercisesElementViewHolder extends RecyclerView.ViewHolder {
