@@ -23,7 +23,7 @@ public class ForumDetailActivity extends AppCompatActivity {
     AppDatabase db;
     Forum forum;
     FragmentManager fragmentManager;
-
+    int count;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,5 +45,20 @@ public class ForumDetailActivity extends AppCompatActivity {
         fragmentManager.beginTransaction().replace(R.id.fragmentForumDetail, new ForumDetailFragment()).commit();
     }
 
+    @Override
+    public void onBackPressed() {
+        count = getSupportFragmentManager().getBackStackEntryCount();
+        if (count == 0) {
+            super.onBackPressed();
+        } else if(count % 2 == 0){
+            intent = new Intent(getApplicationContext(), SoothingToolsActivity.class);
+            intent.putExtra("soothingToolsElement","FORUM");
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            finish();
+            startActivity(intent);
+        } else {
+            getSupportFragmentManager().popBackStack();
+        }
+    }
 
 }

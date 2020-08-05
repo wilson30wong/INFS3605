@@ -10,6 +10,7 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
 import com.example.infs3605v1.R;
@@ -19,8 +20,8 @@ import com.example.infs3605v1.methods.Methods;
 public class MeditateFragment extends Fragment {
 
     LinearLayout meditateFragmentButtonLayer;
-    Button medidateFragmentMusic;
-    Button medidateFragmentTutorials;
+    ConstraintLayout medidateFragmentMusic;
+    ConstraintLayout medidateFragmentTutorials;
     FrameLayout frameLayout;
     Toast toast;
 

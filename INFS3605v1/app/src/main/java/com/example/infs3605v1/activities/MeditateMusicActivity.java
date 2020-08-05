@@ -3,11 +3,13 @@ package com.example.infs3605v1.activities;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.infs3605v1.R;
 import com.example.infs3605v1.api.YoutubeConfig;
+import com.example.infs3605v1.methods.Methods;
 import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
@@ -20,7 +22,9 @@ public class MeditateMusicActivity extends YouTubeBaseActivity {
     ConstraintLayout meditationMusic2;
     ConstraintLayout meditationMusic3;
     TextView meditationMusicTitle;
+    Toast toast;
 
+    Methods methods;
     YouTubePlayer.OnInitializedListener onInitializedListener;
 
     @Override
@@ -39,6 +43,11 @@ public class MeditateMusicActivity extends YouTubeBaseActivity {
         meditationMusic3 = findViewById(R.id.meditationMusic3);
         meditationMusicTitle = meditationMusic3.findViewById(R.id.meditationMusicTitle);
         meditationMusicTitle.setText("Chilled Cow Livestream");
+
+        methods = new Methods(getApplicationContext());
+        toast = Toast.makeText(getApplicationContext(), "Choose a music stream", Toast.LENGTH_LONG);
+        methods.toastConfiguration(toast);
+        toast.show();
 
         onInitializedListener = new YouTubePlayer.OnInitializedListener() {
             @Override

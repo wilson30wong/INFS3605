@@ -58,12 +58,11 @@ public class NewForumReplyFragment extends Fragment {
                         HomeActivity.username,
                         methods.getCurrentDate()
                 );
-
                 db.forumReplyDao().insert(forumReply);
                 toast = Toast.makeText(getActivity().getApplicationContext(), "Forum Reply Created", Toast.LENGTH_LONG);
                 methods.toastConfiguration(toast);
                 toast.show();
-                getFragmentManager().beginTransaction().replace(R.id.fragmentForumDetail, new ForumDetailFragment()).commit();
+                getFragmentManager().beginTransaction().replace(R.id.fragmentForumDetail, new ForumDetailFragment()).addToBackStack(null).commit();
             }
         });
 

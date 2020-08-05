@@ -48,7 +48,6 @@ public class ForumAdapter extends RecyclerView.Adapter<ForumAdapter.ForumViewHol
             holder.recentReply.setText("");
             holder.recentReplyAuthorDate.setText("");
         }
-
         holder.view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

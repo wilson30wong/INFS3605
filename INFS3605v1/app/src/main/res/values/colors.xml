@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    //Background: #f0f0f0
-    //Pink button: #575757
-
     <color name="colorPrimary">#DABDB8</color>
     <color name="colorPrimaryDark">#C59499</color>
     <color name="colorPrimaryMedium">#D5AFAB</color>

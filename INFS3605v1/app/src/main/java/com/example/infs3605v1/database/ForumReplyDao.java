@@ -20,7 +20,7 @@ public interface ForumReplyDao {
     @Query("SELECT * FROM forumreply WHERE forumId = :forumId")
     List<ForumReply> findForumReplyByForumId(int forumId);
 
-    @Query("SELECT * FROM forumreply WHERE forumId = :forumId ORDER BY date DESC LIMIT 1")
+    @Query("SELECT * FROM forumreply WHERE forumId = :forumId ORDER BY id DESC LIMIT 1")
     ForumReply findMostRecentForumReplyByForum(int forumId);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

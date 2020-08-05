@@ -30,9 +30,9 @@ public class HomeActivity extends AppCompatActivity {
     RecyclerView.LayoutManager soothingToolsLayoutManager;
     RecyclerView recyclerViewSoothingTools;
     LinearLayout homeToolboxButtonLayer;
-    Button homeHelplineButton;
-    Button homeCovidButton;
-    Button homeSettingsButton;
+    ConstraintLayout homeHelplineButton;
+    ConstraintLayout homeCovidButton;
+    ConstraintLayout homeSettingsButton;
     Toast toast;
 
     Intent intent;
@@ -43,7 +43,6 @@ public class HomeActivity extends AppCompatActivity {
     LearnAdapter learnAdapter;
     SoothingToolsAdapter soothingToolsAdapter;
     Methods methods;
-
     public static String username;
 
     @Override
@@ -61,7 +60,9 @@ public class HomeActivity extends AppCompatActivity {
         db = AppDatabase.getInstance(getApplicationContext());
         methods = new Methods(this);
         intent = getIntent();
-        username = intent.getStringExtra("username");
+        if(username == null){
+            username = intent.getStringExtra("username");
+        }
         homeWelcomeTitle.setText("welcome, " + username);
 
         populateLearnRv();

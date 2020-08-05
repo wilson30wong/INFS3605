@@ -58,7 +58,7 @@ public class NewForumFragment extends Fragment {
                 toast = Toast.makeText(getActivity().getApplicationContext(), "Forum Post Created", Toast.LENGTH_LONG);
                 methods.toastConfiguration(toast);
                 toast.show();
-                getFragmentManager().beginTransaction().replace(R.id.fragmentSoothingTools, new ForumFragment()).commit();
+                getFragmentManager().beginTransaction().replace(R.id.fragmentSoothingTools, new ForumFragment()).addToBackStack(null).commit();
             }
         });
         return frameLayout;

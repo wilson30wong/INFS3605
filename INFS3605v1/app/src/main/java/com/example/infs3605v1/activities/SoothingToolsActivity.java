@@ -18,6 +18,7 @@ public class SoothingToolsActivity extends AppCompatActivity {
     Intent intent;
     String soothingToolsElement;
 
+    int count;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +38,21 @@ public class SoothingToolsActivity extends AppCompatActivity {
         } else if (soothingToolsElement.equals("MEDITATE")) {
             fragmentManager.beginTransaction().replace(R.id.fragmentSoothingTools, new MeditateFragment()).commit();
         }
-
-
     }
+
+    @Override
+    public void onBackPressed() {
+        count = getSupportFragmentManager().getBackStackEntryCount();
+        if (count == 0) {
+            super.onBackPressed();
+        } else if(count % 2 == 0){
+            intent = new Intent(getApplicationContext(), HomeActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            finish();
+            startActivity(intent);
+        } else {
+            getSupportFragmentManager().popBackStack();
+        }
+    }
+
 }

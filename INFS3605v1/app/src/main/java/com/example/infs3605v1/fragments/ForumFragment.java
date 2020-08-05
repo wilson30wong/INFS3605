@@ -61,7 +61,7 @@ public class ForumFragment extends Fragment {
         forumAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getFragmentManager().beginTransaction().replace(R.id.fragmentSoothingTools, new NewForumFragment()).commit();
+                getFragmentManager().beginTransaction().replace(R.id.fragmentSoothingTools, new NewForumFragment()).addToBackStack(null).commit();
             }
         });
 
